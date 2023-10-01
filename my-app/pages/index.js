@@ -13,12 +13,11 @@ export default function Home() {
 
 const callGetResponse = async () => {
   setIsLoading(true);
-  let temp = [...messages];
+  let temp = messages;
   temp.push({ role: "user", content: theInput });
-  setMessages(temp);
+  setMessages(temp)
   setTheInput("");
   console.log("Calling OpenAI...");
-
   try {
     const response = await fetch(
       "/api",
@@ -31,8 +30,6 @@ const callGetResponse = async () => {
       }
     );
 
-
-   
 
     if (!response.ok) {
       throw new Error(`Request failed with status: ${response.status}`);
