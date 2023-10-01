@@ -21,23 +21,25 @@ const callGetResponse = async () => {
 
   try {
     const response = await fetch(
-      "https://6425q4q74l.execute-api.us-west-2.amazonaws.com/Testing",
+      "/api",
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          'x-api-key': 
-          'JPbUJrAlEsacl6Gq1HzKO1vSJQaUOhjx8GDR6fIg', 
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ messages }),
       }
     );
+
+
+   
 
     if (!response.ok) {
       throw new Error(`Request failed with status: ${response.status}`);
     }
 
     const data = await response.json();
+    
     const { output } = data;
     console.log("OpenAI replied...", output.content);
 

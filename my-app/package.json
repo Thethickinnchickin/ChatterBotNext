@@ -9,13 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "next": "latest",
+    "openai": "^4.11.0",
     "react": "latest",
-    "react-dom": "latest",
-    "next": "latest"
+    "react-dom": "latest"
   },
   "devDependencies": {
+    "@types/react": "18.2.23",
     "autoprefixer": "latest",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "5.2.2"
   }
 }
