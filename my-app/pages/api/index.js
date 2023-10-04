@@ -2,7 +2,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_KEY,
 });
 
 export default async function handler(req, res) {
@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       model: "gpt-3.5-turbo",
       messages: body.messages,
     });
+
     
     const theResponse = completion.choices[0].message;
 
